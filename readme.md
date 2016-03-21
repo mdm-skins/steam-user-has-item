@@ -25,20 +25,21 @@ hasItem.then(item => {
 
 ```js
 var hasItem = require('steam-user-has-item');
-hasItem({user: 'awtt', item: '937246119_188530139', timeout: 500}); // Will retry every 500milisconds if user have the item
+hasItem({user: 'awtt', item: '937246119_188530139', timeout: 500}); // Will retry every 500 miliseconds if user have the item
 
+// Sometime in the future
 hasItem.then(item => {
 	console.log(item);
 });
 
-hasItem.clear(); // Clear the timeout if dont want to wait any more
+hasItem.clear(); // Optionally you can clear the timeout if you dont want to wait any more
 ```
 
 
 ## API
 
 ### hasItem({user, item, game, timeout})
-Return: `Promise that resolve to item object if found or null if not found`
+Return: `Promise that resolve to item object if found or reject if item is not found`
 
 #### user
 
@@ -50,7 +51,7 @@ Steam username or profile ID.
 
 Type: `String`
 
-Item ID from [https://github.com/steam-items/steam-user-inventory#steamuserinventoryuser-game](steam-user-inventory)
+Item ID from [steam-user-inventory](https://github.com/steam-items/steam-user-inventory#steamuserinventoryuser-game)
 
 #### game
 
