@@ -1,0 +1,40 @@
+{
+  "name": "steam-user-has-item",
+  "version": "1.0.0",
+  "description": "Check if user has item in his inventory",
+  "license": "MIT",
+  "repository": "steam-items/steam-user-has-item",
+  "author": {
+    "name": "Daniel Husar",
+    "email": "dano.husar@gmail.com",
+    "url": "github.com/danielhusar"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "xo && mocha --timeout=5000"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "steam",
+    "user",
+    "inventory"
+  ],
+  "dependencies": {
+    "steam-user-inventory": "^2.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "nock": "^7.5.0",
+    "xo": "^0.9.0"
+  },
+  "xo": {
+    "envs": [
+      "node",
+      "mocha"
+    ]
+  }
+}
