@@ -39,7 +39,6 @@ hasItem.clear(); // Clear the timeout if dont want to wait any more
 
 ### hasItem({user, item, game, timeout})
 Return: `Promise that resolve to item object if found or null if not found`
-```
 
 #### user
 
