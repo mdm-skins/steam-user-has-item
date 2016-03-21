@@ -22,7 +22,7 @@ module.exports = function (data) {
 		});
 	}
 
-	function resolve() {
+	function check() {
 		return req().then(function (items) {
 			if (items[0]) {
 				clearInterval(interval);
@@ -30,18 +30,18 @@ module.exports = function (data) {
 			}
 
 			if (!items[0] && !data.interval) {
-				deferred.resolve(null);
+				deferred.reject(null);
 			}
 		});
 	}
 
-	resolve();
+	check();
 	if (data.interval) {
-		interval = setInterval(resolve, data.interval);
+		interval = setInterval(check, data.interval);
 	}
 
 	deferred.promise.clear = function () {
-		deferred.resolve(null);
+		deferred.reject(null);
 		clearInterval(interval);
 	};
 

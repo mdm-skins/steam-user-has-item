@@ -14,7 +14,7 @@ it('Checking for non existing item', () => {
 		.get('/id/foo/inventory/json/730/2/')
 		.reply(200, []);
 
-	return hasItem({user: 'foo', item: 'foo'}).then(item => {
+	return hasItem({user: 'foo', item: 'foo'}).then(() => {}, item => {
 		assert.equal(item, null);
 	});
 });
@@ -49,7 +49,7 @@ it('Clearing timeout', () => {
 	let req = hasItem({user: 'foo', item: '937246119_188530139', timeout: 200});
 	req.clear();
 
-	return req.then(item => {
+	return req.then(() => {}, item => {
 		assert.equal(item, null);
 	});
 });
